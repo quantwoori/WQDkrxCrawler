@@ -216,10 +216,10 @@ class KRXIndexComposite:
 
 if __name__ == '__main__':
     with no_ssl_verification():
-        d0 = datetime(2010, 1, 1)
-        d1 = datetime(2022, 2, 28)
+        d0 = datetime(2022, 3, 1)
+        d1 = datetime(2022, 3, 28)
         ds = search_dates(d0, d1)
         krx = KRXIndexComposite(
-            srch_key='코스피 중형주',
+            srch_key='코스닥 150',
             date=ds
         )
