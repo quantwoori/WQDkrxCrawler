@@ -19,11 +19,12 @@ Modules are stored in ./krx folder.
 ```
 ./krx
 |
-- Xind.py  # Crawl index component
-- (X....py)  # TBD
+- Xcrawl.py  # Crawl index component
+- Vcrawl.py  # Crawl VIX future curve
+- Dcrawl.py  # Crawl Deep Search Webpage
 ```
 Modules Serve One and One url only. 
-For instance, Xind.py only crawls index composition.
+For instance, Xind.py only crawls index composition from KRX.
 
 </p>
 
@@ -45,4 +46,19 @@ Features
 
 </p>
 
-## 
+## Vcrawl.py
+<p>
+Features
+  
+1. vixcentral crawl.
+2. vixcentral offers 20 historical data at a time
+3. process: open browser -> set environment -> add dates -> download
+</p>
+
+## Dcrawl.py
+<p>
+  Features
+  
+1. crawl deepsearch news website
+2. info: (1) News Title (2) News Type (3) News Time (4) News Source (5) News Content (6) News Sentiment (7) News target company
+</p>
