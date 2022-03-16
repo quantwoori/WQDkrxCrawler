@@ -63,7 +63,7 @@ class VixCrawl:
             by=By.XPATH,
             value=cfg.BUTTON_HIDDEN
         ).click()
-        time.sleep(0.2)
+        time.sleep(0.4)
         print(cfg.MSG_DOWNLOAD)
         self.browser.find_element(
             by=By.XPATH,
@@ -77,12 +77,16 @@ class VixCrawl:
         print(cfg.MSG_SETTING_ENV)
         self.set_historical()
 
-        rest_count = 0
+        download_count, rest_count = 0, 0
         for i in range(4869):
             self.add_date()
             rest_count += 1
+            download_count += 1
 
-            if rest_count % 103 == 0:
+            if download_count % 1==0:# 20 == 0:
+                self.download()
+
+            if rest_count % 107 == 0:
                 rest_time = int(random.randint(80, 270))
                 print(f"resting {rest_time}. avoid detection")
                 time.sleep(rest_time)
