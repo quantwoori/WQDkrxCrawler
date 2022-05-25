@@ -5,9 +5,15 @@ from datetime import datetime
 from util.UTIL_monkeypatch import no_ssl_verification
 
 
-with no_ssl_verification():
-    d0 = datetime(2022, 1, 1)
-    d1 = datetime(2022, 2, 28)
+def automate_krx(target_index:str):
+    t = datetime.now()
+    d0 = datetime(t.year, t.month, 1)
+    d1 = datetime(t.year, t.month, 20)
     ds = search_dates(d0, d1)
+    # download data
+    with no_ssl_verification():
+        krx = KRXIndexComposite(
+            srch_key=target_index,
+            date=ds
+        )
 
-    krx = KRXIndexComposite(srch_key='코스피 200', date=ds)

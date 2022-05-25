@@ -114,6 +114,7 @@ class DeepSearchCrawl:
         self.set_summary()
         time.sleep(2)
 
+        input()
         # COLLECT DATA
         r = self.collect()
         return r
